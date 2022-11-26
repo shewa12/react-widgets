@@ -1,26 +1,31 @@
-import { Fragment, useRef, useState } from "react";
+import { Fragment, useState } from "react";
 import Search from "./Search";
 
 function Accordion() {
-    const [activeIndex, setActiveIndex] = useState(null);
+   
     const [items, setItems] = useState([]);
-    const accordion = useRef(null);
+    //const accordion = useRef(null);
     const onTitleClick = (index) => {
-        setActiveIndex(index);
+        const accordion = document.getElementById(index);
+        accordion.classList.toggle("show");
+        if (accordion.classList.contains("show")) {
+            accordion.querySelector(".accordion-body").style.display = 'block';
+        } else {
+            accordion.querySelector(".accordion-body").style.display = 'none';
+        }
     }
 
     const renderItems = items.map((item, index) => {
-        const active = index === activeIndex ? 'show' : '';
+        
         return (
-            
             <div className="accordion mt-2" id="accordionExample" key={item.pageid}>
                 <div className="accordion-item">
                     <h2 className="accordion-header">
-                    <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target={`#${index}`} aria-expanded="true" aria-controls={`collapse${activeIndex}`} onClick={ ()=> onTitleClick(index)}>
+                    <button className="accordion-button" type="button" data-bs-toggle="collapse" aria-expanded="true" onClick={ ()=> onTitleClick(index)}>
                         {item.title}
                     </button>
                     </h2>
-                    <div ref={accordion} id={index} className={`accordion-collapse collapse ${active}`} aria-labelledby="headingOne">
+                    <div id={index} className={`accordion-collapse collapse`} aria-labelledby="headingOne">
                         <div className="accordion-body">
                             <span dangerouslySetInnerHTML={{__html: item.snippet}}>
                                 

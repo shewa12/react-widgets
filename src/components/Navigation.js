@@ -8,8 +8,11 @@ const Navigation = () => {
             <Link href={ '/' } className={ 'btn btn-primary mx-3' }>
                 Search
             </Link>
-            <Link href={ '/translate' } className={ 'btn btn-secondary' }>
+            <Link href={ '/translate' } className={ 'btn btn-secondary  mx-3' }>
                 Translate
+            </Link>
+            <Link href={ '/shopping-cart' } className={ 'btn btn-success' }>
+                Shopping Cart
             </Link>
         </Fragment>
     );

@@ -40,6 +40,9 @@ function Accordion() {
 
     return (
         <Fragment>
+            <p className="my-3 text-primary">
+              Search from Wiki with Debouncing mechanism
+            </p>
             { <Search lists={setItems} />}
             {items.length ? <p>Total items found: {items.length}</p> : ''}
             {renderItems}

@@ -11,9 +11,9 @@ const ShoppingCart = () => {
     ];
     return (
         <Fragment>
-            <h3 className="my-3">
+            <p className="my-3 text-primary">
                 Shopping Cart with Context API
-            </h3>
+            </p>
             <Provider>
                 <Cart />
                 <Products products={products}/>

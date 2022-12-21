@@ -26,6 +26,9 @@ const Translate = () => {
     const [language, setLanguage] = useState(languages[3]);
     return (
        <div>
+            <p className="my-3 text-primary">
+              Translate with Google Translate API
+            </p>
             <textarea className="form-control mb-4" placeholder="Write here..." value={ text } onChange={ e => setText(e.target.value ) }></textarea>
             <div className="row">
                 <div className="col">

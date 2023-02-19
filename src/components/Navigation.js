@@ -11,8 +11,11 @@ const Navigation = () => {
             <Link to="/translate" className={ 'btn btn-secondary  mx-3' }>
                 Translate
             </Link>
-            <Link to="/shopping-cart" className={ 'btn btn-success' }>
+            <Link to="/shopping-cart" className={ 'btn btn-success mx-3' }>
                 Shopping Cart
+            </Link>
+            <Link to="/play-list" className={ 'btn btn-warning' }>
+                Play List
             </Link>
         </Fragment>
     );

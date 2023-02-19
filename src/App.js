@@ -5,6 +5,7 @@ import Accordion from './components/Accordion';
 import Navigation from './components/Navigation';
 import ShoppingCart from './components/ShoppingCart/ShoppingCart';
 import Translate from './components/Translate/Translate';
+import PlayList from './components/Playlist/PlayList';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
                 <Route path="/" element={<Accordion />} />
                 <Route path="/translate" element={<Translate />} />
                 <Route path="/shopping-cart" element={<ShoppingCart />} />
+                <Route path="/play-list" element={<PlayList />} />
               </Routes>
           </div>
         </div>

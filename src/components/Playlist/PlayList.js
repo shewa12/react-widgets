@@ -1,22 +1,22 @@
 import MoviePlayList from "./list-components/MoviePlayList";
 import SongPlayList from "./list-components/SongPlayList";
 import "./style.css";
-import "../../redux-store/index";
+import { store } from "../../redux-store/index";
+import { Provider } from "react-redux";
+import Reset from "./list-components/Reset";
 
 export default function PlayList() {
-  const handleResetClick = () => {
-    //
-  };
+
 
   return (
-    <div className="container is-fluid">
-      <button onClick={() => handleResetClick()} className="button is-danger">
-        Reset Both Playlists
-      </button>
-      <hr />
-      <MoviePlayList />
-      <hr />
-      <SongPlayList />
-    </div>
+    <Provider store={store}>
+      <div className="container is-fluid">
+        <Reset />
+        <hr />
+        <MoviePlayList />
+        <hr />
+        <SongPlayList />
+      </div>
+    </Provider>
   );
 }

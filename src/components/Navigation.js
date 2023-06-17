@@ -14,8 +14,11 @@ const Navigation = () => {
             <Link to="/shopping-cart" className={ 'btn btn-success mx-3' }>
                 Shopping Cart
             </Link>
-            <Link to="/play-list" className={ 'btn btn-warning' }>
+            <Link to="/play-list" className={ 'btn btn-warning mx-3' }>
                 Play List
+            </Link>
+            <Link to="/car-management" className={ 'btn btn-primary mx-3' }>
+                Car Management
             </Link>
         </Fragment>
     );

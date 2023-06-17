@@ -6,6 +6,8 @@ import Navigation from './components/Navigation';
 import ShoppingCart from './components/ShoppingCart/ShoppingCart';
 import Translate from './components/Translate/Translate';
 import PlayList from './components/Playlist/PlayList';
+import MultipleSlice from './car-management/CarManagement';
+import CarManagement from './car-management/CarManagement';
 
 function App() {
 
@@ -23,6 +25,7 @@ function App() {
                 <Route path="/translate" element={<Translate />} />
                 <Route path="/shopping-cart" element={<ShoppingCart />} />
                 <Route path="/play-list" element={<PlayList />} />
+                <Route path="/car-management" element={<CarManagement />} />
               </Routes>
           </div>
         </div>

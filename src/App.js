@@ -13,20 +13,23 @@ function App() {
 
   return (
     <div className="container">
-      <h2>React Widgets</h2>
+      
       <BrowserRouter>
-        <div className='card mt-2'>
-          <div className='card-header'>
-            <Navigation />
-          </div>
-          <div className='card-body'>
-              <Routes>
-                <Route path="/" element={<Accordion />} />
-                <Route path="/translate" element={<Translate />} />
-                <Route path="/shopping-cart" element={<ShoppingCart />} />
-                <Route path="/play-list" element={<PlayList />} />
-                <Route path="/car-management" element={<CarManagement />} />
-              </Routes>
+        <div className='offset-lg-2 col-lg-8'>
+          <h2 className='py-2'>React Widgets</h2>
+          <div className='card mt-2'>
+            <div className='card-header'>
+              <Navigation />
+            </div>
+            <div className='card-body'>
+                <Routes>
+                  <Route path="/" element={<Accordion />} />
+                  <Route path="/translate" element={<Translate />} />
+                  <Route path="/shopping-cart" element={<ShoppingCart />} />
+                  <Route path="/play-list" element={<PlayList />} />
+                  <Route path="/car-management" element={<CarManagement />} />
+                </Routes>
+            </div>
           </div>
         </div>
       </BrowserRouter>

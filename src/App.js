@@ -6,8 +6,8 @@ import Navigation from './components/Navigation';
 import ShoppingCart from './components/ShoppingCart/ShoppingCart';
 import Translate from './components/Translate/Translate';
 import PlayList from './components/Playlist/PlayList';
-import MultipleSlice from './car-management/CarManagement';
 import CarManagement from './car-management/CarManagement';
+import ReuseableTable from './components/ReuseableTable';
 
 function App() {
 
@@ -15,7 +15,7 @@ function App() {
     <div className="container">
       
       <BrowserRouter>
-        <div className='offset-lg-2 col-lg-8'>
+        <div className='offset-lg-1 col-lg-10'>
           <h2 className='py-2'>React Widgets</h2>
           <div className='card mt-2'>
             <div className='card-header'>
@@ -28,6 +28,7 @@ function App() {
                   <Route path="/shopping-cart" element={<ShoppingCart />} />
                   <Route path="/play-list" element={<PlayList />} />
                   <Route path="/car-management" element={<CarManagement />} />
+                  <Route path="/reuseable-table" element={<ReuseableTable />} />
                 </Routes>
             </div>
           </div>

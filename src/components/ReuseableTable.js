@@ -14,6 +14,7 @@ const ReuseableTable = () => {
         {
             label: 'Fruit',
             render: fruit => fruit.name,
+            header: () => <th><i className="bi bi-arrow-down-up" style={ {cursor: 'pointer'} }></i> Fruit</th>
         },
         {
             label: 'Color',

@@ -1,6 +1,10 @@
+import { Fragment } from "react";
+
 const Table = ({data, config, keyFn}) => {
 
-    const tableHeaders = config.map(item => <th key={item.label}>{item.label}</th>);
+    const tableHeaders = config.map(item => {
+        return item.header ? <Fragment key={item.label}>{item.header()}</Fragment> : <th key={item.label}>{item.label}</th>;
+    });
 
     // Map data to create rows
     const tableRows = data.map(row => {

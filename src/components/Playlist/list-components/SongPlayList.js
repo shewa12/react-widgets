@@ -22,7 +22,7 @@ function SongPlayList() {
         {song}
         <button
           onClick={() => handleSongRemove(song)}
-          className="button is-danger"
+          className="btn btn-warning"
         >
           X
         </button>
@@ -37,7 +37,7 @@ function SongPlayList() {
         <div className="buttons">
           <button
             onClick={() => handleSongAdd(createRandomSong())}
-            className="button is-link"
+            className="btn btn-success"
           >
             + Add Song to Playlist
           </button>

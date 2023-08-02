@@ -10,7 +10,7 @@ const Reset = () => {
     };
 
     return (
-        <button onClick={() => handleResetClick()} className="button is-danger">
+        <button onClick={() => handleResetClick()} className="btn btn-danger">
         Reset Both Playlists
       </button>
     );

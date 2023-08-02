@@ -1,4 +1,4 @@
-import Table from "./Table/Table";
+import SortableTable from "./Table/SortableTable";
 
 const ReuseableTable = () => {
     // Array of data to populate table rows
@@ -14,7 +14,7 @@ const ReuseableTable = () => {
         {
             label: 'Fruit',
             render: fruit => fruit.name,
-            header: () => <th><i className="bi bi-arrow-down-up" style={ {cursor: 'pointer'} }></i> Fruit</th>
+            sortValue: fruit => fruit.name
         },
         {
             label: 'Color',
@@ -23,13 +23,14 @@ const ReuseableTable = () => {
         {
             label: 'Size',
             render: fruit => fruit.size,
+            sortValue: fruit => fruit.size
         },
     ];
 
     const keyFn = (fruit) => fruit.name; 
 
     return (
-        <Table data= { data } config={ config } keyFn={ keyFn } />
+        <SortableTable data= { data } config={ config } keyFn={ keyFn } />
     )
 }
 export default ReuseableTable;

@@ -23,6 +23,9 @@ const Navigation = () => {
             <Link to="/reuseable-table" className={ 'btn btn-info mx-3' }>
                 Reuseable Table
             </Link>
+            <Link to="/media" className={ 'btn btn-danger mx-3' }>
+                Media
+            </Link>
         </Fragment>
     );
 }

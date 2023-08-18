@@ -1,0 +1,33 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "John Doe"
+        },
+        {
+            "id": 2,
+            "name": "Jane Doe"
+        },
+        {
+            "id": 3,
+            "name": "John Smith"
+        },
+        {
+            "id": 4,
+            "name": "Sarah Williams"
+        }
+    ],
+    "albums": [
+        {
+            "id": 1,
+            "title": "Blue Train",
+            "userId": 1
+        },
+        {
+            "id": 2,
+            "title": "Saturday Night Fever",
+            "userId": 2
+        }
+    ],
+    "photos": []
+}

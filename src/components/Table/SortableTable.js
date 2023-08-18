@@ -5,11 +5,18 @@ const SortableTable = (props) => {
     // Sorting states
     const [sortOrder, setSortOrder] = useState(null);
     const [sortBy, setSortBy] = useState(null);
-
+    const [activeSortingColumn, setActiveSortingColumn] = useState(null);
     const { config, data } = props;
 
     // Handle sorting
     const handleClick = (label) => {
+        setActiveSortingColumn(label);
+        // if (sortBy && sortBy !== label) {
+        //     setSortBy(label);
+        //     setSortOrder('asc');
+        //     return;
+        // }
+
         if (sortOrder === null) {
             setSortOrder('asc');
             setSortBy(label);
@@ -43,6 +50,15 @@ const SortableTable = (props) => {
         });
     }
 
+    const getSortIconClassName = (label) => { 
+        if (activeSortingColumn && label !== activeSortingColumn) {
+            return 'bi bi-arrow-down-up';
+        }
+        
+        let sortIcon = sortOrder === 'asc' ? 'bi bi-arrow-up' : sortOrder === 'desc' ? 'bi bi-arrow-down' : 'bi bi-arrow-down-up';
+       return sortIcon; 
+    }
+
     // Add header function if has sortValue prop
     const updatedConfig = config.map(column => {
         if (!column.sortValue) {
@@ -51,7 +67,7 @@ const SortableTable = (props) => {
         return {
             ...column,
             header: () => {
-                return <th onClick={ () => { handleClick(column.label) } }> <i className={ sortOrder === 'asc' ? 'bi bi-arrow-up' : sortOrder === 'desc' ? 'bi bi-arrow-down' : 'bi bi-arrow-down-up'}></i> { column.label }</th>
+                return <th onClick={ () => { handleClick(column.label) } }> <i className={ getSortIconClassName(column.label) }></i> { column.label }</th>
             }
         }
 

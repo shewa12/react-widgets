@@ -8,6 +8,7 @@ import Translate from './components/Translate/Translate';
 import PlayList from './components/Playlist/PlayList';
 import CarManagement from './car-management/CarManagement';
 import ReuseableTable from './components/ReuseableTable';
+import Media from './media/Media';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
                   <Route path="/play-list" element={<PlayList />} />
                   <Route path="/car-management" element={<CarManagement />} />
                   <Route path="/reuseable-table" element={<ReuseableTable />} />
+                  <Route path="/media" element={<Media />} />
                 </Routes>
             </div>
           </div>

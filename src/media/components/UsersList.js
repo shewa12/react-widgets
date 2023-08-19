@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 import { useGetUsersQuery } from '../store/apis/AppApi';
 import Spinner from './Spinner';
+import { Link } from 'react-router-dom';
 
 const UsersList = () => {
     // Destructure fields from hook
@@ -12,7 +13,10 @@ const UsersList = () => {
         return (
             <tr key={ user.id }>
                 <td>{ user.id }</td>
-                <td>{ user.name }</td>
+                <td>
+                    <Link to={`users/${user.id}`} >{ user.name }</Link>
+                    
+                </td>
                 <td>
                     <button className='btn btn-danger btn-sm'>Remove</button>
                 </td>

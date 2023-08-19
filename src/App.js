@@ -1,6 +1,6 @@
 
 import './App.css';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import Accordion from './components/Accordion';
 import Navigation from './components/Navigation';
 import ShoppingCart from './components/ShoppingCart/ShoppingCart';
@@ -9,6 +9,8 @@ import PlayList from './components/Playlist/PlayList';
 import CarManagement from './car-management/CarManagement';
 import ReuseableTable from './components/ReuseableTable';
 import Media from './media/Media';
+import User from './media/components/User';
+import UsersList from './media/components/UsersList';
 
 function App() {
 
@@ -23,6 +25,7 @@ function App() {
               <Navigation />
             </div>
             <div className='card-body'>
+            
                 <Routes>
                   <Route path="/" element={<Accordion />} />
                   <Route path="/translate" element={<Translate />} />
@@ -30,8 +33,12 @@ function App() {
                   <Route path="/play-list" element={<PlayList />} />
                   <Route path="/car-management" element={<CarManagement />} />
                   <Route path="/reuseable-table" element={<ReuseableTable />} />
-                  <Route path="/media" element={<Media />} />
+                  <Route path="/media" element= { <Media />}>
+                    <Route index element={ <UsersList /> } />
+                    <Route path='users/:id' element= { <User /> } />
+                  </Route>
                 </Routes>
+                
             </div>
           </div>
         </div>

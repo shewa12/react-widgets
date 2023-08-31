@@ -1,12 +1,14 @@
 {
   "users": [
     {
-      "id": 3,
-      "name": "John Smith"
+      "id": 1,
+      "name": "Hilario71",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/39.jpg"
     },
     {
-      "id": 4,
-      "name": "Sarah Williams"
+      "id": 2,
+      "name": "Guillermo.Murphy11",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/936.jpg"
     }
   ],
   "albums": [],

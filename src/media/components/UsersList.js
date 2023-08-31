@@ -1,4 +1,5 @@
 import { Fragment } from 'react';
+import { faker } from '@faker-js/faker';
 import { useAddNewUserMutation, useGetUsersQuery, useDeleteUserMutation } from '../store/apis/AppApi';
 import Spinner from './Spinner';
 import { Link } from 'react-router-dom';
@@ -19,9 +20,10 @@ const UsersList = () => {
         return (
             <tr key={ user.id }>
                 <td>{ user.id }</td>
+                <td><img src={user.avatar} alt={ user.name } width={ "80px" }/></td>
                 <td width={'80%'}>
                     <Link to={`users/${user.id}`} >{ user.name }</Link>
-                    <div className='my-2'>
+                    <div>
                         <Albums />
                     </div>
                 </td>
@@ -69,8 +71,9 @@ const UsersList = () => {
             try {
                 const userData = {
                     // ceil random number
-                    id: Math.ceil(Math.random() * 1000),
-                    name: 'New User' + new Date().getTime()
+                    id: users ? users.length + 1 : 1,
+                    name: faker.internet.userName(),
+                    avatar: faker.internet.avatar(),
                 }
                 await addNewUser(userData); 
             } catch (error) {
@@ -80,7 +83,9 @@ const UsersList = () => {
     
         return (
             <Fragment>
-                <button className='btn btn-sm btn-primary mb-2' onClick={ handleAddUserEvent }>+ Add User</button>
+                <button className='btn btn-sm btn-primary mb-2' onClick={ handleAddUserEvent }>
+                    <i className="bi bi-plus-circle"></i>
+                </button>
                 { content }
             </Fragment>
         );

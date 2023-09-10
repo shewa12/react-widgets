@@ -69,9 +69,10 @@ const UsersList = () => {
 
             // Add user logic
             try {
+                let userId = Math.floor((Math.random() * 100) + 1);
                 const userData = {
                     // ceil random number
-                    id: users ? users.length + 1 : 1,
+                    id: userId,
                     name: faker.internet.userName(),
                     avatar: faker.internet.avatar(),
                 }

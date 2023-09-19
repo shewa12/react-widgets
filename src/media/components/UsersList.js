@@ -24,7 +24,7 @@ const UsersList = () => {
                 <td width={'80%'}>
                     <Link to={`users/${user.id}`} >{ user.name }</Link>
                     <div>
-                        <Albums />
+                        <Albums userId={ user.id }/>
                     </div>
                 </td>
                 <td>

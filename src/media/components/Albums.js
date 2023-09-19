@@ -1,12 +1,30 @@
 import { faker } from "@faker-js/faker";
 import { Fragment } from "react";
+import { useAddAlbumMutation, useGetAlbumsQuery } from "../store/apis/AppApi";
 
-const Albums = ({albums}) => {
+const Albums = ({userId}) => {
+    const [addAlbum, {isAddingAlbum}] = useAddAlbumMutation();
+
+    const handleAddAlbum = async () => {
+      let album = {
+        userId: userId,
+        name: faker.internet.domainName()
+      }
+
+      if (isAddingAlbum) {
+        return;
+      }
+      try {
+        await addAlbum(album);
+      } catch (error) {
+        alert(error)
+      }
+    }
 
     const albumsMarkup = () => {
         return (
             <div className="container">
-              <button className="btn btn-sm btn-primary mb-2">
+              <button className="btn btn-sm btn-primary mb-2" onClick={ (handleAddAlbum) }>
               <i className="bi bi-folder-plus"></i>
               </button>
               <div className="accordion" id="accordionExample">

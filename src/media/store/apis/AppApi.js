@@ -29,7 +29,19 @@ export const AppApi = createApi({
                 method: 'DELETE',
             }),
             invalidatesTags: ['users']
-        })
+        }),
+        getAlbums: builder.query({
+            query: () => `/albums/`
+        }),
+        addAlbum: builder.mutation({
+            query: album => {
+                return {
+                    url: `/albums`,
+                    method: 'POST',
+                    body: album
+                }
+            }
+        }),
     })
 });
 
@@ -38,4 +50,6 @@ export const {
     useGetUserQuery,
     useAddNewUserMutation,
     useDeleteUserMutation,
+    useGetAlbumsQuery,
+    useAddAlbumMutation,
 } = AppApi;

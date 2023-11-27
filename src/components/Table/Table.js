@@ -27,7 +27,16 @@ const Table = ({data, config, keyFn}) => {
                 </tr>   
             </thead>
             <tbody>
-                { tableRows }
+                { data.length ? 
+                tableRows
+                :
+                <tr>
+                    <td colSpan={"100%"}>
+                        No record found
+                    </td>
+                </tr>
+                }
+                
             </tbody>
         </table>
     )

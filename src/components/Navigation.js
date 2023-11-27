@@ -5,26 +5,29 @@ const Navigation = () => {
 
     return (
         <Fragment>
-            <Link to="/" className={ 'btn btn-primary mx-3' }>
+            <Link to="/" className={ 'btn btn-primary mx-2' }>
                 Search
             </Link>
-            <Link to="/translate" className={ 'btn btn-secondary  mx-3' }>
+            <Link to="/translate" className={ 'btn btn-secondary  mx-2' }>
                 Translate
             </Link>
-            <Link to="/shopping-cart" className={ 'btn btn-success mx-3' }>
+            <Link to="/shopping-cart" className={ 'btn btn-success mx-2' }>
                 Shopping Cart
             </Link>
-            <Link to="/play-list" className={ 'btn btn-warning mx-3' }>
+            <Link to="/play-list" className={ 'btn btn-warning mx-2' }>
                 Play List
             </Link>
-            <Link to="/car-management" className={ 'btn btn-primary mx-3' }>
+            <Link to="/car-management" className={ 'btn btn-primary mx-2' }>
                 Car Management
             </Link>
-            <Link to="/reuseable-table" className={ 'btn btn-info mx-3' }>
+            <Link to="/reuseable-table" className={ 'btn btn-info mx-2' }>
                 Reuseable Table
             </Link>
-            <Link to="/media" className={ 'btn btn-danger mx-3' }>
+            <Link to="/media" className={ 'btn btn-danger mx-2' }>
                 Media
+            </Link>
+            <Link to="/todos" className={ 'btn btn-secondary mx-2' }>
+                Todos
             </Link>
         </Fragment>
     );

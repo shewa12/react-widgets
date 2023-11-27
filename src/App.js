@@ -11,6 +11,9 @@ import ReuseableTable from './components/ReuseableTable';
 import Media from './media/Media';
 import User from './media/components/User';
 import UsersList from './media/components/UsersList';
+import Todos from './Todos/components/Todos';
+import List from './Todos/components/List';
+import AddNew from './Todos/components/AddNew';
 
 function App() {
 
@@ -36,6 +39,12 @@ function App() {
                   <Route path="/media" element= { <Media />}>
                     <Route index element={ <UsersList /> } />
                     <Route path='users/:id' element= { <User /> } />
+                  </Route>
+                  <Route path="/todos" element={ 
+                        <Todos />
+                    }>
+                      <Route index element={ <List />}></Route>
+                      <Route path='add-new' element={ <AddNew />}></Route>
                   </Route>
                 </Routes>
                 
